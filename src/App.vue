@@ -31,7 +31,6 @@
                  :suppressHorizontalScroll="false"
                  :pagination="true"
                  :paginationPageSize="paginationPageSize"
-                 :components="components"
     >
     </ag-grid-vue>
   </div>
@@ -65,7 +64,7 @@
     },
     components: {
       'ag-grid-vue': AgGridVue,
-      agGridAcao: AgGridAcao
+      'agGridAcao': AgGridAcao
     },
     beforeMount() {
       this.gridOptions = {
@@ -84,10 +83,6 @@
         componentParent: this
       }
 
-      this.components = {
-        agGridAcao: AgGridAcao
-      };
-
       this.columnDefs = [
         {headerName: 'Make', field: 'make'},
         {headerName: 'Model', field: 'model'},
@@ -97,7 +92,7 @@
           field: 'id',
           cellRendererFramework: 'agGridAcao',
         }
-      ]
+      ];
 
       this.rowData = [
         {make: 'Toyota', model: 'Celica', price: 35000, id: 1},
